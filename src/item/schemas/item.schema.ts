@@ -7,16 +7,16 @@ export type ItemDocument = Item & Document;
 
 @Schema()
 export class Item {
-  @Prop({ required: true })
+  @Prop({ minlength: 3 , required: true })
   title: string;
 
   @Prop({ required: true })
   description: string;
 
-  @Prop({ required: true })
+  @Prop({ min: 0, required: true })
   price: number;
 
-  @Prop({ required: true })
+  @Prop({ min: 0, required: true })
   taxRate: number;
 
   @Prop({ type: String , required: true })
